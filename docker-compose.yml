@@ -1,0 +1,27 @@
+version: '3'
+services:
+    mysql:
+        image: mysql:5.7
+        container_name: crawler-mysql
+        restart: always
+        environment:
+            MYSQL_DATABASE: 'crawler'
+            MYSQL_USER: 'crawler'
+            MYSQL_PASSWORD: 'crawler@123'
+            MYSQL_ROOT_PASSWORD: 'admin@123'
+        expose:
+            - 3306
+        ports:
+            - "3306:3306"
+    redis:
+        image: redis
+        container_name: crawler-redis
+        command: redis-server --requirepass redis@123
+        ports:
+            - "6379:6379"
+        expose:
+            - 6379
+        volumes:
+            - ./docker/data/redis:/var/lib/redis
+            - ./docker/redis.conf:/usr/local/etc/redis/redis.conf
+        restart: always

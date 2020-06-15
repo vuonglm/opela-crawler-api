@@ -1,0 +1,45 @@
+{
+  "name": "opela-crawler-api-poc",
+  "version": "1.0.0",
+  "description": "Opela Crawler written in nodejs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "test": "cross-env NODE_ENV=test mocha --bail --reporter spec --recursive --require @babel/register --timeout 300000",
+    "lint": "eslint ./*.js ./**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://er-phongln@bitbucket.org/est-rouge/opela-crawler-api-poc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/est-rouge/opela-crawler-api-poc#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/register": "^7.9.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "chai": "^4.2.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "mocha": "^7.1.1",
+    "webpack": "^4.42.1"
+  },
+  "dependencies": {
+    "async": "^3.2.0",
+    "bull": "^3.13.0",
+    "bull-arena": "^2.7.1",
+    "express": "^4.17.1",
+    "i18n": "^0.8.6",
+    "joi": "^14.3.1",
+    "lodash": "^4.17.15",
+    "puppeteer": "^2.1.1",
+    "request": "^2.88.2"
+  }
+}
